@@ -24,6 +24,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <EditText
+            android:id="@+id/username"
             android:layout_marginTop="20dp"
             android:hint="username"
             android:drawablePadding="10dp"
@@ -33,6 +34,7 @@
             android:padding="10dp"/>
 
         <EditText
+            android:id="@+id/password"
             android:layout_marginTop="10dp"
             android:hint="password"
             android:drawablePadding="10dp"
@@ -49,6 +51,7 @@
             android:layout_gravity="end"/>
 
         <Button
+            android:id="@+id/button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
@@ -59,6 +62,7 @@
             android:textSize="21sp"/>
 
         <TextView
+            android:id="@+id/signUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"

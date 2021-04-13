@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class UserScreenActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.user_screen)
+        setContentView(R.layout.activity_sign_up)
 
-        val button = findViewById<Button>(R.id.button_returnMatching)
+        val button = findViewById<Button>(R.id.button_saveAccount)
         button.setOnClickListener {
             val intent =  Intent(this, SlideScreenActivity::class.java)
 
-            startActivity(intent) }
+            startActivity(intent)
+        }
     }
 }
