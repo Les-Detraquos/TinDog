@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TinDog">
-        <activity android:name=".UserScreenActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".ChatScreenActivity" />
+        <activity android:name=".SlideScreenActivity" />
+        <activity android:name=".UserScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
