@@ -95,11 +95,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
+        android:onClick="register"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
         android:text="save my account"
         android:textAllCaps="false"
         android:textSize="21sp"/>
+
+    <TextView
+        android:id="@+id/gotologin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToLogin"
+        android:text="go to LOGIN"
+        android:padding="5dp"
+        android:layout_gravity="center"/>
+
 
     </LinearLayout>
 
