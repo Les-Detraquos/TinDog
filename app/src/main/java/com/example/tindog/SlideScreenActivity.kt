@@ -13,14 +13,8 @@ import com.google.firebase.database.ValueEventListener
 
 
 class SlideScreenActivity : AppCompatActivity() {
-    val name_animal = findViewById<TextView>(R.id.name_animal)
-    val yes_button = findViewById<ImageView>(R.id.no_button)
-    val no_button = findViewById<ImageView>(R.id.yes_button)
 
-
-    val database = FirebaseDatabase.getInstance()
-    val myRef = database.getReference()
-    var nameAnimal = myRef.child("name_animal")
+    private val database = FirebaseDatabase.getInstance().getReference()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +29,7 @@ class SlideScreenActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-        nameAnimal.addValueEventListener(object : ValueEventListener {
+        /*nameAnimal.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val text =
                     dataSnapshot.getValue(String::class.java)!!
@@ -43,7 +37,7 @@ class SlideScreenActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
-        })
+        })*/
         //code en java a convertir en kt : tentative de passer au prochain
         //nom d'animal en cliquant sur le no_button ou le yes_button
 

@@ -29,13 +29,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: android.view.View){
-        val getEmail = findViewById<EditText>(R.id.email_textField)
-        val getPassword = findViewById<EditText>(R.id.password_textField)
-        val email = getEmail.text.toString()
-        val password = getPassword.text.toString()
+        val getEmailLogin = findViewById<EditText>(R.id.email)
+        val getPasswordLogin = findViewById<EditText>(R.id.password)
+        val emailLogin = getEmailLogin.text.toString()
+        val passwordLogin = getPasswordLogin.text.toString()
 
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+        auth.signInWithEmailAndPassword(emailLogin,passwordLogin).addOnCompleteListener { task ->
             if(task.isSuccessful){
+                //l'utilisateur est bien Signed In mais le passage a la SlideScreenActivity ne marche pas
                 val intent = Intent(this,SlideScreenActivity::class.java)
                 startActivity(intent)
                 finish()

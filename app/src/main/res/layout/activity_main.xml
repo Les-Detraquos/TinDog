@@ -24,9 +24,9 @@
             android:layout_gravity="center_horizontal"/>
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/email"
             android:layout_marginTop="20dp"
-            android:hint="username"
+            android:hint="email address"
             android:drawablePadding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
