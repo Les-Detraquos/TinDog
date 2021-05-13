@@ -6,15 +6,15 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+
+//ask for help about resolving these two reference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.referencecode.database.models.User
 
 
 class SlideScreenActivity : AppCompatActivity() {
-
-    private val database = FirebaseDatabase.getInstance().getReference()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,25 +27,19 @@ class SlideScreenActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    override fun onStart() {
-        super.onStart()
-        /*nameAnimal.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val text =
-                    dataSnapshot.getValue(String::class.java)!!
-                name_animal.text = text
-            }
+    //code needed to write one time in the database the animal's information needed for the recycler view
 
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })*/
-        //code en java a convertir en kt : tentative de passer au prochain
-        //nom d'animal en cliquant sur le no_button ou le yes_button
+    //declare database ref
+    private lateinit var database: DatabaseReference
 
-        //no_button.setOnClickListener(new View.OnClickListener(){
-            //@Override
-            //public void onClick(View view){
-                //nameAnimal.setValue()
-            //}
-        //})
+    //initialize database ref
+    fun initializeDbRef() {
+        database = Firebase.database.reference
+    }
+
+    // writing new user in database
+    fun writeNewUser(animalID: String, name: String, race: String, breed: String, age: String, city: String) {
+        val user = User(name, race, breed, age, city)
+        database.child("animals").child(animalID).setValue(user)
     }
 }

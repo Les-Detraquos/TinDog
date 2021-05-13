@@ -1,17 +1,18 @@
 package com.example.tindog
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.core.view.View
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.ktx.Firebase
+
+//ask for help about resolving these two reference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.referencecode.database.models.User
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -55,5 +56,19 @@ class SignUpActivity : AppCompatActivity() {
     fun goToLogin(view: android.view.View){
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
+    }
+
+    //declare database ref
+    private lateinit var database: DatabaseReference
+
+    //initialize database ref
+    fun initializeDbRef() {
+        database = Firebase.database.reference
+    }
+
+    // writing new user in database
+    fun writeNewUser(userId: String, name: String, surname: String, phoneNumber: String, email: String, password: String) {
+        val user = User(name, surname, phoneNumber, email, password)
+        database.child("users").child(userId).setValue(user)
     }
 }
