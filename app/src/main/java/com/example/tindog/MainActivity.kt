@@ -36,8 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(emailLogin,passwordLogin).addOnCompleteListener { task ->
             if(task.isSuccessful){
-                //l'utilisateur est bien Signed In mais le passage a la SlideScreenActivity ne marche pas
+                setContentView(R.layout.activity_slide_screen)
                 val intent = Intent(this,SlideScreenActivity::class.java)
+                setContentView(R.layout.activity_slide_screen)
                 startActivity(intent)
                 finish()
             }
