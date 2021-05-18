@@ -19,12 +19,6 @@ class SlideScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slide_screen)
 
-        val button = findViewById<ImageView>(R.id.settings)
-        button.setOnClickListener {
-            val intent =  Intent(this, UserScreenActivity::class.java)
-
-            startActivity(intent)
-        }
     }
     //code needed to write one time in the database the animal's information needed for the recycler view
 

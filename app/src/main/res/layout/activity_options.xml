@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/RougeTrèsPale"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/bande_rouge"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/Rouge"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId">
+
+
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:text="Options"
+            android:textSize="35dp"
+            android:layout_toRightOf="@+id/fleche"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toEndOf="@id/imageView3"
+            android:textColor="@color/Blanc"
+
+            tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/fleche"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="-45dp"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="19dp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        app:layout_constraintTop_toBottomOf="@+id/bande_rouge"
+        android:layout_alignParentTop="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>

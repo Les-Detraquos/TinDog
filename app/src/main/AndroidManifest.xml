@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TinDog">
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".OptionsScreenActivity"></activity>
+        <activity android:name=".RclVwSwipe" />
+        <activity android:name=".RclVwOptions" />
+        <activity android:name=".AdapterRclVwSwipe" />
+        <activity android:name=".AdapterRclVwOptions" />
+        <activity android:name=".SignUpActivity" />
         <activity android:name=".ChatScreenActivity" />
+        <activity android:name=".activity_chat" />
+        <activity android:name=".activity_options" />
         <activity android:name=".SlideScreenActivity" />
         <activity android:name=".UserScreenActivity" />
         <activity android:name=".MainActivity">

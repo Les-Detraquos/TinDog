@@ -4,74 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/slide_background"
+    android:background="@color/RougeMoyen"
     tools:context=".SlideScreenActivity">
 
 
     <LinearLayout
+        android:id="@+id/bande_rouge"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/Rouge"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId">
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_centerVertical="true">
+        android:orientation="vertical">
 
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/dog_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="450dp"
             android:padding="20dp"
-            android:layout_marginBottom="80dp"
-            android:layout_gravity="center_horizontal"/>
-
-        <ImageView
-            android:id="@+id/settings"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/settings_icon"
-            android:padding="20dp"
-            android:layout_marginBottom="100dp"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
-            android:id="@+id/name_animal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="name_animal"
-            android:layout_gravity="center_horizontal"/>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_centerVertical="true">
-
-            <ImageView
-                android:id="@+id/no_button"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/cross_icon"
-                android:layout_marginRight="40dp"
-                android:layout_gravity="center_horizontal"/>
-
-            <ImageView
-                android:id="@+id/yes_button"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ok_icon"
-                android:padding="10dp"
-                android:layout_gravity="center_horizontal"/>
-        </LinearLayout>
-
-
+            android:src="@drawable/dog_icon" />
 
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_viewSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:clipToPadding="false"
+
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:listitem="@layout/rclvwswipe" />
 
 </RelativeLayout>

@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="RougeTrèsPale">#FBEFEF</color>
     <color name="RougeMoyen">#FA5858</color>
+    <color name="Blanc">#FFFFFF</color>
+    <color name="Rouge">#FF0000</color>
 </resources>
