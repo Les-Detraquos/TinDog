@@ -95,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background"
-        android:onClick="register"
+        android:onClick="registerAndWriteNewUser"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="5dp"
         android:text="save my account"
