@@ -2,7 +2,6 @@ package com.example.tindog
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -14,7 +13,6 @@ import com.google.firebase.storage.FirebaseStorage
 
 //ask for help about resolving these two reference
 import com.google.firebase.database.ktx.database
-import com.google.firebase.referencecode.database.models.User
 import com.google.firebase.storage.ktx.storage
 
 
@@ -43,14 +41,8 @@ class SignUpActivity : AppCompatActivity() {
     fun register(view: View){
         val getEmail = findViewById<EditText>(R.id.email_textField)
         val getPassword = findViewById<EditText>(R.id.password_textField)
-        val getPhoneNumber = findViewById<EditText>(R.id.phoneNumber_textField)
-        val getName = findViewById<EditText>(R.id.name_textField)
-        val getSurname = findViewById<EditText>(R.id.surname_textField)
         val email = getEmail.text.toString()
         val password = getPassword.text.toString()
-        val phoneNumber = getPhoneNumber.text.toString()
-        val name = getName.text.toString()
-        val surname = getSurname.text.toString()
 
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
             if (task.isSuccessful){
@@ -100,6 +92,17 @@ class SignUpActivity : AppCompatActivity() {
         //Il faut voir si il y a un moyen d'acceder directement au cloud et les display dans le recycler
         //view sans les telecharger en local
     }
-
-
+    fun User(name: String, surname: String, phoneNumber: String, email: String, password: String) {
+        val getEmail = findViewById<EditText>(R.id.email_textField)
+        val getPassword = findViewById<EditText>(R.id.password_textField)
+        val getPhoneNumber = findViewById<EditText>(R.id.phoneNumber_textField)
+        val getName = findViewById<EditText>(R.id.name_textField)
+        val getSurname = findViewById<EditText>(R.id.surname_textField)
+        val email = getEmail.text.toString()
+        val password = getPassword.text.toString()
+        val phoneNumber = getPhoneNumber.text.toString()
+        val name = getName.text.toString()
+        val surname = getSurname.text.toString()
+    }
 }
+
