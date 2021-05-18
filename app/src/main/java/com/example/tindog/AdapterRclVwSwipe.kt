@@ -9,30 +9,32 @@ import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class AdapterRclVwSwipe (private val ListRclVwSwipe: List<RclVwSwipe>) : RecyclerView.Adapter<AdapterRclVwOptions.ViewHolderSwipe>() {
+class AdapterRclVwSwipe(private val SwipeList: List<RclVwSwipe>) : RecyclerView.Adapter<AdapterRclVwSwipe.ViewHolderSwipe>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderOptions {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.rclvw1,
-            parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderSwipe {
 
-        return ViewHolderOptions(itemView)
+        val itemView2 = LayoutInflater.from(parent.context).inflate(R.layout.rclvwswipe,
+        parent, false)
+
+        return ViewHolderSwipe(itemView2)
     }
 
+    override fun getItemCount() = SwipeList.size
 
+    override fun onBindViewHolder(holder: ViewHolderSwipe, position: Int) {
+        val currentItem2 = SwipeList[position]
 
-    override fun getItemCount() = ListRclVwOptions.size
-
-
-    override fun onBindViewHolder(holder: ViewHolderOptions, position: Int) {
-        val currentItem = ListRclVwOptions[position]
-
-        holder.imageView.setImageResource(currentItem.imageResource)
-        holder.textView.text = currentItem.text1
+        holder.imageViewAnimal.setImageResource(currentItem2.imageResourceAnimal)
+        holder.imageViewCross.setImageResource(currentItem2.imageCroix)
+        holder.imageViewYes.setImageResource(currentItem2.imageYes)
+        holder.textViewNom.text = currentItem2.textnom
     }
 
-    class ViewHolderOptions(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageView : ImageView = itemView.findViewById(R.id.image_view)
-        val textView : TextView = itemView.findViewById(R.id.text_view)
+    class ViewHolderSwipe(itemView2 : View) : RecyclerView.ViewHolder(itemView2) {
+        val imageViewAnimal: ImageView = itemView2.findViewById(R.id.image_view_animal)
+        val imageViewCross: ImageView = itemView2.findViewById(R.id.no_button)
+        val imageViewYes: ImageView = itemView2.findViewById(R.id.yes_button)
+        val textViewNom : TextView = itemView2.findViewById(R.id.name_animal)
 
     }
 }
