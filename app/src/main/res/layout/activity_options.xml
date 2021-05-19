@@ -33,7 +33,6 @@
             android:layout_toRightOf="@+id/fleche"
             android:layout_marginStart="50dp"
             android:layout_marginTop="12dp"
-            app:layout_constraintStart_toEndOf="@id/imageView3"
             android:textColor="@color/Blanc"
 
             tools:ignore="MissingConstraints" />

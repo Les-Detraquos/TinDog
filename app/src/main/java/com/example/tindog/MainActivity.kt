@@ -22,29 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     // [END declare_auth]
 
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_main)
-
-        auth = FirebaseAuth.getInstance()
-
-        // page option
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        val ListExample = GénérationListDébile(size = 50)
-        recyclerView.adapter = AdapterRclVwOptions(ListExample)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
-
-        //Page swipe
-        val recyclerView2 = findViewById<RecyclerView>(R.id.recycler_viewSwipe)
-        val ListExampleSwipe = GénérationListDébile2(size=10)
-        recyclerView2.adapter = AdapterRclVwSwipe(ListExampleSwipe)
-        recyclerView2.layoutManager = LinearLayoutManager (this)
-        recyclerView2.setHasFixedSize(true)
-    }
-
-    private fun GénérationListDébile(size: Int): List<RclVwOptions>{
+    fun GénérationListDébile(size: Int): List<RclVwOptions>{
 
         val list = ArrayList<RclVwOptions>()
 
@@ -58,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         return list
     }
 
-    private fun GénérationListDébile2(size: Int): List<RclVwSwipe>{
+    fun GénérationListDébile2(size: Int): List<RclVwSwipe>{
 
         val list2 = ArrayList<RclVwSwipe>()
 
@@ -74,21 +52,39 @@ class MainActivity : AppCompatActivity() {
                 7 -> R.drawable.nezmoche
                 8 -> R.drawable.marsupial
                 9 -> R.drawable.chouettecheum
-
                 else -> null
             }
-            val item2 = RclVwSwipe(drawable, textnom = "Nom $i")
 
-            list2 += item2
+            val item2 = drawable?.let { RclVwSwipe(it, textnom = "Nom $i",
+                cross_icon = 10, ok_icon = 11) }
+
+            //list2 += item2
         }
-
-
-
-
-
         return list2
     }
 
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_main)
+
+        auth = FirebaseAuth.getInstance()
+
+        // page option
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val listExample = GénérationListDébile(size = 50)
+        recyclerView.adapter = AdapterRclVwOptions(listExample)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.setHasFixedSize(true)
+
+        //Page swipe
+        val recyclerView2 = findViewById<RecyclerView>(R.id.recycler_viewSwipe)
+        val listExampleSwipe = GénérationListDébile2(size=10)
+        recyclerView2.adapter = AdapterRclVwSwipe(listExampleSwipe)
+        recyclerView2.layoutManager = LinearLayoutManager (this)
+        recyclerView2.setHasFixedSize(true)
+
+    }
 
     fun login(view: android.view.View){
         val getEmailLogin = findViewById<EditText>(R.id.email)

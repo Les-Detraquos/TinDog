@@ -25,8 +25,8 @@ class AdapterRclVwSwipe(private val SwipeList: List<RclVwSwipe>) : RecyclerView.
         val currentItem2 = SwipeList[position]
 
         holder.imageViewAnimal.setImageResource(currentItem2.imageResourceAnimal)
-        holder.imageViewCross.setImageResource(currentItem2.imageCroix)
-        holder.imageViewYes.setImageResource(currentItem2.imageYes)
+        holder.imageViewCross.setImageResource(currentItem2.cross_icon)
+        holder.imageViewYes.setImageResource(currentItem2.ok_icon)
         holder.textViewNom.text = currentItem2.textnom
     }
 
