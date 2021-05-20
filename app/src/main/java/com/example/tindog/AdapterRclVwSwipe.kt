@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -24,9 +25,7 @@ class AdapterRclVwSwipe(private val SwipeList: List<RclVwSwipe>) : RecyclerView.
     override fun onBindViewHolder(holder: ViewHolderSwipe, position: Int) {
         val currentItem2 = SwipeList[position]
 
-        holder.imageViewAnimal.setImageResource(currentItem2.imageResourceAnimal)
-        holder.imageViewCross.setImageResource(currentItem2.cross_icon)
-        holder.imageViewYes.setImageResource(currentItem2.ok_icon)
+        holder.imageViewAnimal.setImageDrawable(ContextCompat.getDrawable(holder.itemView.context,currentItem2.imageResourceAnimal))
         holder.textViewNom.text = currentItem2.textnom
     }
 
