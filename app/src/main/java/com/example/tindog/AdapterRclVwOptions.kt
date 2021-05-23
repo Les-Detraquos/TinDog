@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 
@@ -26,7 +27,7 @@ class AdapterRclVwOptions(private val ListRclVwOptions: List<RclVwOptions>) : Re
     override fun onBindViewHolder(holder: ViewHolderOptions, position: Int) {
         val currentItem = ListRclVwOptions[position]
 
-        holder.imageView.setImageResource(currentItem.imageResource)
+        holder.imageView.setImageDrawable(ContextCompat.getDrawable(holder.itemView.context,currentItem.imageResource))
         holder.textView.text = currentItem.text1
     }
 

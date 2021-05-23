@@ -52,7 +52,7 @@ class SlideScreenActivity : AppCompatActivity() {
                 else -> null
             }
 
-            val item2 = drawable?.let { RclVwSwipe(it, textnom = "Nom $i") }
+            val item2 = drawable?.let { RclVwSwipe(it, textnom = "Gerard numéro $i") }
 
             if (item2 != null) {
                 list2.add(item2)

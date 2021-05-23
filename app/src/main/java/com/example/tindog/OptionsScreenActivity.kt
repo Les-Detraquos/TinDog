@@ -15,7 +15,6 @@ class Options_screen_activity : AppCompatActivity() {
         val listExample = GénérationListDébile(size = 50)
         recyclerView.adapter = AdapterRclVwOptions(listExample)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
     }
 
     fun GénérationListDébile(size: Int): List<RclVwOptions>{
@@ -25,7 +24,7 @@ class Options_screen_activity : AppCompatActivity() {
         for (i in 0 until size){
             val logo = R.drawable.ic_clef_marteau
             val item = RclVwOptions(logo, text1 = "Item $i")
-            list += item
+            list.add(item)
 
 
         }
