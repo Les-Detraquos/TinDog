@@ -1,6 +1,6 @@
 package com.example.tindog
 
-//ask for help about resolving these two reference
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -17,13 +17,13 @@ import com.google.firebase.storage.ktx.storage
 
 class SignUpActivity : AppCompatActivity() {
 
-    // [START declare_auth]
-    private lateinit var auth: FirebaseAuth
-    // [END declare_auth]
 
-    // [START storage_field_declaration]
+    private lateinit var auth: FirebaseAuth
+
+
+
     lateinit var storage: FirebaseStorage
-    // [END storage_field_declaration]
+
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +32,9 @@ class SignUpActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        // [START storage_field_initialization]
+
         storage = Firebase.storage
-        // [END storage_field_initialization]
+
 
 
     }
@@ -42,10 +42,10 @@ class SignUpActivity : AppCompatActivity() {
     fun User(name: String, surname: String, phoneNumber: String, city : String, email: String, password: String) {
     }
 
-    //declare database ref
+
     private lateinit var database: DatabaseReference
 
-    //initialize database ref
+
     fun initializeDbRef() {
         database = Firebase.database.reference
     }
@@ -66,7 +66,7 @@ class SignUpActivity : AppCompatActivity() {
         val phoneNumber = getPhoneNumber.text.toString()
         val city = getCity.text.toString()
 
-        //need to fetch the userID too
+
 
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
             if (task.isSuccessful){
@@ -92,7 +92,7 @@ class SignUpActivity : AppCompatActivity() {
 
     fun downloadAnimalPictures() {
 
-        // Create a reference to a file from a Google Cloud Storage URI
+
         val cat1Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/cat1.jfif")
         val cat2Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/cat2.jfif")
         val cat3Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/cat3.jfif")
@@ -101,10 +101,6 @@ class SignUpActivity : AppCompatActivity() {
         val dog2Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/dog2.jfif")
         val dog3Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/dog3.jfif")
         val dog4Ref = storage.getReferenceFromUrl("gs://tindog-d82b1.appspot.com/dog4.jfif")
-
-        //je crois que ca n'a aucun sens de les dl depuis le cloud alors que je les ai deja sur l'ordi
-        //Il faut voir si il y a un moyen d'acceder directement au cloud et les display dans le recycler
-        //view sans les telecharger en local
     }
 
 }

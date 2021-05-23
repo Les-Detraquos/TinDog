@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
-
-//ask for help about resolving these two reference
 import com.google.firebase.database.ktx.database
 
 
@@ -23,14 +21,14 @@ class SlideScreenActivity : AppCompatActivity() {
 
 
 
-        //Page swipe
+
         val recyclerView2 = findViewById<RecyclerView>(R.id.recycler_viewSwipe)
         val listExampleSwipe = GénérationListDébile2(size=10)
         recyclerView2.layoutManager = LinearLayoutManager (this)
         recyclerView2.adapter = AdapterRclVwSwipe(listExampleSwipe)
 
     }
-    //code needed to write one time in the database the animal's information needed for the recycler view
+
 
 
     fun GénérationListDébile2(size: Int): List<RclVwSwipe>{
@@ -61,15 +59,15 @@ class SlideScreenActivity : AppCompatActivity() {
         return list2
     }
 
-    //declare database ref
+
     private lateinit var database: DatabaseReference
 
-    //initialize database ref
+
     fun initializeDbRef() {
         database = Firebase.database.reference
     }
 
-    // writing new user in database
+
     fun writeNewUser(animalID: String, name: String, race: String, breed: String, age: String, city: String) {
         val user = User(name, race, breed, age, city)
         database.child("animals").child(animalID).setValue(user)

@@ -10,7 +10,7 @@ class Options_screen_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_options)
 
-        // page option
+
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         val listExample = GénérationListDébile(size = 50)
         recyclerView.adapter = AdapterRclVwOptions(listExample)
