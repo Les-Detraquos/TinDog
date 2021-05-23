@@ -10,15 +10,15 @@ Notre application consiste en une application de matching basé sur Tinder, mais
     
 Ce que nous avions envisagé :
 
-Avoir un système d'authentification fonctionnel avec une écriture des infos de l'utilisateur dans la database de Firebase.
-Avoir un recycler view dans la page de swipe avec les différents profils d'animaux. Accéder à ces profils depuis la database Firebase.
-Avoir une page Options dans laquelle nous pouvons sélectionner la ville et le type d'animal recherché.
-Avoir une page de chat fonctionnelle.
+- Avoir un système d'authentification fonctionnel avec une écriture des infos de l'utilisateur dans la database de Firebase.
+- Avoir un recycler view dans la page de swipe avec les différents profils d'animaux. Accéder à ces profils depuis la database Firebase.
+- Avoir une page Options dans laquelle nous pouvons sélectionner la ville et le type d'animal recherché.
+- Avoir une page de chat fonctionnelle.
 
 Ce que nous avons pu réaliser :
-Avoir un système d'authentification fonctionnel avec une écriture des infos de l'utilisateur dans la database de Firebase.
-Avoir un recycler view fonctionnel dans la page de swipe ainsi que dans la page des options (ce dernier étant vide). L'écriture dans la base de données n'est pas entièrement fonctionnelle.
-La page de chat a été designé mais n'est pas fonctionnelle. (non fini car manque de temps)
+- Avoir un système d'authentification fonctionnel avec une écriture des infos de l'utilisateur dans la database de Firebase.
+- Avoir un recycler view fonctionnel dans la page de swipe ainsi que dans la page des options (ce dernier étant vide). L'écriture dans la base de données n'est pas entièrement     fonctionnelle.
+- La page de chat a été designé mais n'est pas fonctionnelle. (non fini car manque de temps)
 
 Points positifs/négatifs d'Android :
 
